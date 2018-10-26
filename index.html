@@ -1,76 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <script>
-      window.onload =  function() {
-          
-            var u = "camw.html",
-                img = document.getElementById('vid'),
-                n = 'myNewWindow',
-                w = img.clientWidth / 1.5,
-                h = (img.clientHeight - 4.5) / 1.5
+    <script src="./main.js"></script>
+    <div class="container">
+        <div class="mx-auto my-3" style="width: 50vw;">
+            <div class="card text-center" >
+                <img class="card-img-top" src="http://192.168.1.106:81/mjpg/Cam1/video.mjpg"
+                    alt="Card image cap" id="vid">
+                <div class="card-body">
+                    <p class="card-text">Click to open in new window</p>
+                    <button class="btn btn-primary" onclick="popper()">New Window</button>
+                </div>
+            </div>
+        </div>
 
+        <img src="http://192.168.1.106:81/mjpg/Cam1/video.mjpg" id="vidb">
+    </div>
 
-
-            var myparameters = 'width=' + w + ', height=' + h + ', resizable = yes, toolbar = no, location = no, directories = no, status = no, menubar = no, scrollbars = no, resizable = no'
-     
-          window.close();
-            var b = window.open(u, n, myparameters);
-            var c = window.focus();
-            return [a,b, c]
-         
-        }
-
-    </script>
-<button onclick="winop()">Click me</button>
-
-<img id="vid" style="-webkit-user-select: none;" src="http://192.168.1.106:81/mjpg/Cam1/video.mjpg">
     <!-- Fallback here -->
-<!-- <video id="video" src="http://192.168.0.11:81/h264/Cam1/temp.ts"></video> -->
-
-
-
-    // function windowme() {     
-    // window.open("camw.html", "windowName",
-    //         "width="+ this.width+ ",height=" + this.height+",scrollbars=no");
-    // }
-      
-    // function popOpen(url, target, height, width) {
-    //         var newWindow, args = "";
-    //         args += "height=" + height + ",width=" + width;
-    //         args += "dependent=yes,scrollbars=yes,resizable=yes";
-    //         newWindow = open(url, target, args);
-    //         newWindow.focus();
-    //         return newWindow;
-    //     }
-    // var img = document.getElementById('vid');
-    // var width = img.clientWidth;
-    // var height = img.clientHeight;
-    // var url = "camw.html"
-    // var target = "windowName"
-        
-    //     var popwin = popOpen(url, target, height, width)
-
-    //     var myparameters = 'width=' + w + ', height=' + h + ', ' + 'left=' + wleft + ', top=' + wtop + ', ' + tools;
-    //         win3 = window.open(u, n, myparameters);
+    <!-- <video id="video" src="http://192.168.0.11:81/h264/Cam1/temp.ts"></video> -->
 
 </body>
+
 </html>
 <style>
     body {
-        padding: 0px;
-        margin: 0px;
+
         overflow: hidden;
     }
-#vid{
-    width: 100vw;
-    height: auto;
-}
+
+    #vidb {
+        visibility: hidden;
+        width: 100vw;
+        height: auto;
+    }
+
+    #vid {
+        /* visibility: hidden; */
+        width: 100%;
+        height: auto;
+    }
 </style>
 <!-- lr4913.myfoscam.org -->
