@@ -4,15 +4,21 @@ window.onload = function() {
     "click",
     function(event) {
       (img = document.getElementById("vid")),
-          (w = img.clientWidth - (img.clientWidth * .9 )),
-          (h = img.clientHeight - (img.clientHeight * .9))
+        (w = img.clientWidth - img.clientWidth * 0.9),
+        (h = img.clientHeight - img.clientHeight * 0.9);
       window.resizeBy(-w, -h);
     },
     false
   );
-    document.addEventListener("contextmenu", function(event) {
-        (img = document.getElementById("vid")), (w = img.clientWidth - img.clientWidth * 0.9), (h = img.clientHeight - img.clientHeight * 0.9);
-        window.resizeBy(w, h);
-        event.preventDefault()
-      }, false);
+  document.addEventListener(
+    "contextmenu",
+    function(event) {
+      (img = document.getElementById("vid")),
+        (w = img.clientWidth - img.clientWidth * 0.9),
+        (h = img.clientHeight - img.clientHeight * 0.9);
+      window.resizeBy(w, h);
+      event.preventDefault();
+    },
+    false
+  );
 };
