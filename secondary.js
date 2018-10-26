@@ -1,7 +1,7 @@
 window.onload = function() {
   console.log("loaded");
   (img = document.getElementById("vid")),
-    (window.innerHeight = img.clientHeight),
+    (window.innerHeight = img.clientHeight - 50),
     (window.innerWidth = img.clientWidth);
 
   document.addEventListener(

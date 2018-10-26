@@ -4,7 +4,7 @@ window.onload = function() {
     img = document.getElementById("vidb"),
     n = "myNewWindow",
     w = img.clientWidth / 1.5,
-    h = (img.clientHeight - 4.5) / 1.5;
+    h = (img.clientHeight - 0) / 1.5;
 
   var myparameters =
     "width=" +
