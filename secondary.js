@@ -8,18 +8,28 @@ window.onload = function() {
     "click",
     function(event) {
       (img = document.getElementById("vid")),
-        (w = img.clientWidth - img.clientWidth * 0.9),
-        (h = img.clientHeight - img.clientHeight * 0.9);
+        (w = img.clientWidth - img.clientWidth * 0.5),
+        (h = img.clientHeight - img.clientHeight * 0.5);
       window.resizeBy(-w, -h);
     },
     false
   );
+var dim = {
+
+}
+
+
   document.addEventListener(
     "contextmenu",
     function(event) {
+      event.preventDefault();      
+      let oh = window.innerHeight;      
+      let ww = window.innerWidth;
+  
+      
       (img = document.getElementById("vid")),
-        (w = img.clientWidth - img.clientWidth * 0.9),
-        (h = img.clientHeight - img.clientHeight * 0.9);
+        (w = img.clientWidth - img.clientWidth * 0.5),
+        (h = img.clientHeight - img.clientHeight * 0.5);
       window.resizeBy(w, h);
       event.preventDefault();
     },
