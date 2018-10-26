@@ -13,14 +13,14 @@
 </head>
 
 <body>
- 
+<script src="./secondary.js"></script>
 
     <img id="vid" class="img-fluid" alt="Responsive image" src="http://192.168.0.11:81/mjpg/Cam1/video.mjpg">
 
 
-<script>
+<!-- <script>
     document.addEventListener('contextmenu', event => event.preventDefault());
-</script>
+</script> -->
 </body>
 
 </html>
@@ -32,12 +32,13 @@
     }
 #vid:hover {
 
-    transform: scale(1.02)
+    transform: scale(1.01)
 }
     #vid {
        -webkit-user-select: none;
        transition: 300ms;
  transition-timing-function: ease-out;
+ width: 100%;
         /* width: 100vw;
         height: auto; */
     }

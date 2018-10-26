@@ -4,8 +4,8 @@ window.onload = function() {
   var u = "camw.html",
     img = document.getElementById("vidb"),
     n = "myNewWindow",
-    w = img.clientWidth / 1.5,
-    h = (img.clientHeight - 4.5) / 1.5;
+    w = img.clientWidth / .9,
+    h = img.clientHeight - .9;
 
   var myparameters =
     "width=" +
@@ -17,7 +17,7 @@ window.onload = function() {
   window.close();
   var b = window.open(u, n, myparameters);
   var c = window.focus();
-  return [a, b, c];
+  return [b, c];
 };
 
 popper = function() {
@@ -37,5 +37,5 @@ popper = function() {
     window.close();
     var b = window.open(u, n, myparameters);
     var c = window.focus();
-    return [a, b, c];
+    return [b, c];
 }
