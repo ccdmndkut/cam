@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+ 
+
+    <img id="vid" style="-webkit-user-select: none;" src="http://192.168.1.106:81/mjpg/Cam1/video.mjpg">
+    <!-- Fallback here -->
+    <!-- <video id="video" src="http://192.168.0.11:81/h264/Cam1/temp.ts"></video> -->
+
+  <script>
+    window.onclick = function () {
+
+        var u = "cam.html",
+            img = document.getElementById('vid'),
+            n = 'main',
+            w = img.clientWidth,
+            h = img.clientHeight - 3
+
+
+
+        var myparameters = 'width=' + w + ', height=' + h + ', resizable = yes, toolbar = no, location = no, directories = no, status = no, menubar = no, scrollbars = no, resizable = no'
+
+        return window.open(u, n, myparameters);
+        return window.focus();
+        console.log(this.window.name)
+    }
+
+</script>
+</body>
+
+</html>
+<style>
+    body {
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+    }
+
+    #vid {
+        width: 100vw;
+        height: auto;
+    }
+</style>
+<!-- lr4913.myfoscam.org -->
