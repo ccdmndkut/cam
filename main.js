@@ -3,8 +3,8 @@ window.onload = function() {
   var u = "camw.html",
     img = document.getElementById("vidb"),
     n = "myNewWindow",
-    w = img.clientWidth / 1.5,
-    h = (img.clientHeight - 0) / 1.5;
+    w = img.clientWidth / 3,
+    h = (img.clientHeight - 0) / 3;
 
   var myparameters =
     "width=" +
