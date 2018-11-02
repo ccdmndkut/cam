@@ -4,16 +4,16 @@ window.onload = function() {
     (window.innerHeight = img.clientHeight - 50),
     (window.innerWidth = img.clientWidth);
 
-  document.addEventListener(
-    "click",
-    function(event) {
-      (img = document.getElementById("vid")),
-        (w = img.clientWidth - img.clientWidth * 0.5),
-        (h = img.clientHeight - img.clientHeight * 0.5);
-      window.resizeBy(-w, -h);
-    },
-    false
-  );
+  // document.addEventListener(
+  //   "click",
+  //   function(event) {
+  //     (img = document.getElementById("vid")),
+  //       (w = img.clientWidth - img.clientWidth * 0.5),
+  //       (h = img.clientHeight - img.clientHeight * 0.5);
+  //     window.resizeBy(-w, -h);
+  //   },
+  //   false
+  // );
 var dim = {
 
 }
