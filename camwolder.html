@@ -21,7 +21,7 @@
     <!-- Our application root element -->
     <div id="app">
         <div id="showzoom">
-            <div @click="inm" id="zoomwindow"><i id="icona" class="zmdi zmdi-zoom-in zmdi-hc-5x"></i></div>
+            <div @click="inm" id="zoomwindow"><i id="icon" class="zmdi zmdi-zoom-in zmdi-hc-5x"></i></div>
             <div @click="out" id="zoomoutwindow"><i id="icon" class="zmdi zmdi-zoom-out zmdi-hc-5x"></i>
             </div>
         </div>
@@ -92,12 +92,14 @@
     #showzoom {
         opacity: 0;
         color: white;
+        transition: 300ms;
         text-align: center;
 
     }
 
     #showzoom:hover {
-        animation: example 10s forwards;   
+        animation: example 10s forwards;
+
     }
 
     /* #zoomwindow:active,
@@ -110,7 +112,7 @@
         padding-top: 15vh;
         height: 100%;
         width: 50%;
-
+        background-color: black;
         position: absolute;
         opacity: 1;
         border-right: 1vh solid white;
@@ -123,7 +125,7 @@
         height: 100%;
         width: 50%;
         left: 50%;
-
+        background-color: black;
         position: absolute;
         opacity: 1;
         border-left: 1vh solid white;
@@ -169,16 +171,14 @@
     #in:hover {
         background-color: black;
     }
-#icona {
-    color: black;
-}
+
     #icon {
         opacity: 1;
-      }
+    }
 
     @keyframes example {
         0% {
-            opacity: .0;
+            opacity: .9;
 
         }
 
@@ -186,10 +186,13 @@
             opacity: .7;
         }
 
-   
+        50% {
+            opacity: .2;
+        }
+
 
         100% {
-            opacity: .3;
+            opacity: .1;
         }
     }
 
