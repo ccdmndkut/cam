@@ -25,15 +25,15 @@
     <div id="app">
         <b-container>
             <b-jumbotron header="Bootstrap Vue" lead="Bootstrap 4 Components for Vue.js 2">
-                <div id="container">
+                <div @mouseenter="myenter">
                     <b-button id="mid">
                         mid
                     </b-button>
-                    <b-button id="left">
+                    <b-button v-bind:class="{ active: isActive }"  id="left">
                         left
                     </b-button>
 
-                    <b-button id="right">
+                    <b-button v-bind:class="{ active: isActive }"  id="right">
                         right
                     </b-button>
                 </div>
@@ -59,16 +59,30 @@
         window.app = new Vue({
             el: "#app",
             data: {
-                name: ''
+                name: '',
+                isActive: false
             },
             computed: {
                 showAlert() {
                     return this.name.length > 4 ? true : false;
                 }
-            }
+                },
+                methods: {
+                    myleave() {
+ this.isActive = false
+                    },
+                    myenter() {
+                                             this.isActive = true
+                    }
+                }
+            
         })
     </script>
     <style>
+        .active {
+            animation-name: testy;
+        animation-duration: 10s;           
+                     }
         #container {
             width: 100%
         }
@@ -77,6 +91,7 @@
             left: 54px;
             z-index: 101;
             width: 60px;
+            
         }
 
         #right {
@@ -84,8 +99,7 @@
             position: relative;
             right: 70px;
             width: 60px;
-                         animation-name: test;
-        animation-duration: 10s;
+                         
         }
 
         #left {
@@ -99,14 +113,16 @@
             /* visibility: hidden; */
     
         }
-       @keyframes test {
+       @keyframes testy {
    0% {
-           position: absolute
+           position: absolute;
+             right: 200px;
 
         }
 
         100% {
-           position: absolute
+         position: initial;
+             right: 0px;
            
         }
        }
