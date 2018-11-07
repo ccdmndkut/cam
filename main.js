@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
   document.addEventListener('contextmenu', event => event.preventDefault());
   var u = "camw.html",
@@ -5,9 +7,10 @@ window.onload = function() {
     n = "myNewWindow",
     // w = img.clientWidth / 3,
     // h = (img.clientHeight - 0) / 3;
-    w = 582;
-    h = 327;
-
+    wa = 40 * 16;
+  ha = 40 * 9;
+w = wa + 64
+h = ha + 16
   var myparameters =
     "width=" +
     w +
