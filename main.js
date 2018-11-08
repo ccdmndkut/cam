@@ -2,15 +2,17 @@
 
 window.onload = function() {
   document.addEventListener('contextmenu', event => event.preventDefault());
-  var u = "camw.html",
-    img = document.getElementById("vidb"),
-    n = "myNewWindow",
-    // w = img.clientWidth / 3,
-    // h = (img.clientHeight - 0) / 3;
-    wa = 40 * 16;
-  ha = 40 * 9;
-w = wa + 64
-h = ha + 16
+    var u = "http://192.168.0.11:81/iphone.htm",
+      img = document.getElementById("vidb"),
+      n = "myNewWindow",
+      // w = img.clientWidth / 3,
+      // h = (img.clientHeight - 0) / 3;
+//       wa = 40 * 16;
+//   ha = 40 * 9;
+        ha = 600 
+    wa = ha * 1.777777777777778;
+    w = wa
+    h = ha
   var myparameters =
     "width=" +
     w +

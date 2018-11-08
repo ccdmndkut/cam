@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>My first Bootstrap-Vue app</title>
+
+    <!-- Required Stylesheets -->
+
+    <!-- Required scripts -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <!-- Our application root element -->
+    <div id="app">
+    <button v-on:click="test"></button>
+
+    </div>
+
+    <!-- Start running your app -->
+    <script>
+      window.app = new Vue({
+        el: "#app",
+        data: {
+          w: "",
+          ha: ""
+        },
+
+        mounted() {
+          this.$nextTick(function() {
+            window.addEventListener("resize", this.getWindowWidth);
+            this.w = innerWidth;
+            this.ha = innerHeight;
+            document.addEventListener("contextmenu", function(event) {
+              event.preventDefault();
+            });
+          });
+          this.getWindowWidth();
+        },
+        computed: {
+          newh() {
+            var topbar = window.outerHeight - innerHeight;
+            var calch = this.ha - topbar;
+            var nh = calch / this.w;
+            var divl = this.w / 16;
+            var divs = calch / 9;
+var truew = innerWidth
+var trueh = innerHeight
+var mult = truew / trueh
+var test = innerHeight * mult
+            return [topbar, nh, calch, divl, divs, truew, trueh, mult, test];
+            // return this.w * .5625
+          }, 
+          fixedwidth() {
+             return this.newh[7] * this.ha
+          },
+          fixedheight() {
+              return this.newh[2]
+          }
+        },
+        watch: {
+          w: function() {
+            this.w = this.fixedwidth;
+            this.ha = innerHeight;
+       
+          },
+          ha: function() {
+            this.w = this.fixedwidth;
+            this.ha = innerHeight;
+          }
+        },
+        methods: {
+          getWindowWidth() {
+            this.w = this.fixedwidth;
+            this.ha = innerHeight;
+          },
+          test() {
+              window.resizeTo(this.fixedwidth, this.ha)
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

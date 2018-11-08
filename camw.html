@@ -19,14 +19,22 @@
 <body>
     <!-- Our application root element -->
     <div id="app">
-        <div id="showzoom">
+        <!-- <div id="showzoom">
             <div id="width">{{windowb}}</div>
             <div @click="inm" id="zoomwindow"><i id="icona" class="zmdi zmdi-zoom-in zmdi-hc-5x"></i></div>
             <div @click="out" id="zoomoutwindow"><i id="icon" class="zmdi zmdi-zoom-out zmdi-hc-5x"></i>
             </div>
-        </div>
-        <img class="vidd" id="vid" :width="windowWidth" :height="windowHeight"
-            src="http://192.168.0.11:81/mjpg/Cam1/video.mjpg" alt="">
+        </div> -->
+
+        <div id="cont">
+          
+<img class="vida" id="vida" :width="windowWidth" :height="windowHeight" src="http://192.168.0.11:81/mjpg/hik/video.mjpg"
+    alt="">
+<img class="vidd" id="vidb" :width="windowWidth" :height="windowHeight" src="http://192.168.0.11:81/mjpg/Cam1/video.mjpg"
+    alt="">
+</div>
+
+       
     </div>
 
     <!-- Start running your app -->
@@ -43,81 +51,85 @@
                 ww: document.documentElement.clientWidth
             },
             watch: {
-                windowWidth: function () {
+                
+                // windowWidth: function () {
 
-                    var h = this.windowHeight;
-                    var w = this.windowWidth;
-                    var rsh = this.rsh()
-                    if (h == w * .7) {
-                        this.rsh()
+                //     var h = this.windowHeight;
+                //     var w = this.windowWidth;
+                //     var rsh = this.rsh()
+                //     if (h == w * .7) {
+                //         this.rsh()
 
-                    } else {
-                        document.getElementById("vid").setAttribute("class", "hide")
-                        console.log('false')
-                        var self = this;
-                        setTimeout(function () {
-                            var w = innerWidth
-                            window.resizeTo(self.windowWidth, w * .7);
-                            document.getElementById("vid").removeAttribute("class", "hide")
+                //     } else {
+                //         document.getElementById("vid").setAttribute("class", "hide")
+                //         console.log('false')
+                //         var self = this;
+                //         setTimeout(function () {
+                //             var w = innerWidth
+                //             window.resizeTo(self.windowWidth, w * .7);
+                //             document.getElementById("vid").removeAttribute("class", "hide")
 
-                        },
-                            200);
-                    }
-                },
-                windowHeight: function () {
-                    this.rsh()
-                }
-
-
+                //         },
+                //             200);
+                //     }
+                // },
+                // windowHeight: function () {
+                //     this.rsh()
+                // }
             },
             mounted() {
+                  this.$nextTick(function () {  
+                this.windowWidth = innerWidth;
+                  })
                 // this.$nextTick(function () {                  
-                window.addEventListener('resize', this.getWindowWidth);
-                this.windowWidth = outerWidth;
-                this.windowHeight = outerHeight;
+                // window.addEventListener('resize', this.getWindowWidth);
+                // this.windowWidth = outerWidth;
+                // this.windowHeight = outerHeight;
 
-                // window.addEventListener('resize', this.resizer);
-                // window.addEventListener('resize', this.getWindowHeight);
-                document.addEventListener(
-                    "contextmenu",
-                    function (event) {
-                        event.preventDefault();
-                    },
-                );
+                // // window.addEventListener('resize', this.resizer);
+                // // window.addEventListener('resize', this.getWindowHeight);
+                // document.addEventListener(
+                //     "contextmenu",
+                //     function (event) {
+                //         event.preventDefault();
+                //     },
+                // );
                 //Init
                 // this.getWindowWidth()
                 // this.getWindowHeight()
 
             },
             computed: {
-                windowb() {
-                    var w = this.windowWidth;
-                    var h = this.windowHeight;
-                    var t = w + " x " + h
-                    return t
-                }
+                // windowb() {
+                //     var w = this.windowWidth;
+                //     var h = this.windowHeight;
+                //     var t = w + " x " + h
+                //     return t
+                // }
             },
-            methods: {
-                rsh() {
-                    console.log(innerHeight);
-                    console.log(outerHeight);
-                    console.log(outerWidth);
+            methods() {
+},
 
-                    console.log(innerWidth);
+}  )              // rsh() {
+                //     console.log(innerHeight);
+                //     console.log(outerHeight);
+                //     console.log(outerWidth);
 
-                    var w = this.windowWidth;
-                    this.windowHeight = this.windowWidth * .7;
-                    window.resizeTo(this.windowWidth, w * .7);
+                //     console.log(innerWidth);
 
-                },
-                getWindowWidth() {
-                    this.windowWidth = window.outerWidth
-                    this.windowHeight = window.outerHeight
-                },
-                setWindowHeight() {
-                    w = this.windowWidth;
-                    this.windowHeight = w * .5625;
-                },
+                //     var w = this.windowWidth;
+                //     this.windowHeight = this.windowWidth * .7;
+                //     window.resizeTo(this.windowWidth, w * .7);
+
+                // },
+                // getWindowWidth() {
+                //     this.windowWidth = window.outerWidth
+                //     this.windowHeight = window.outerHeight
+                // },
+                // setWindowHeight() {
+                //     w = this.windowWidth;
+                //     this.windowHeight = w * .5625;
+                // },
                 // winresizer() {
                 //     w = this.width;
                 //     var h = 1.77 * w;
@@ -139,55 +151,78 @@
                 //     this.windowWidth = document.documentElement.clientWidth;
                 // },
 
-                ael() {
-                    window.addEventListener('resize', this.getWindowHeight);
-                },
-                getWindowHeight() {
-                    window.removeEventListener('resize', this.getWindowHeight);
-                    var h = innerHeight;
-                    var w = h * 1.77;
-                    window.resizeTo(w, h);
-                    setTimeout(this.ael(), 2000);
-                },
-                resizer() {
-                    console.log('w')
-                    window.removeEventListener('resize', this.getWindowWidth);
-                    width = this.windowWidth = innerWidth;
-                    height = innerHeight * 9;
-                    window.resizeTo(width, height)
-                },
+            //     ael() {
+            //         window.addEventListener('resize', this.getWindowHeight);
+            //     },
+            //     getWindowHeight() {
+            //         window.removeEventListener('resize', this.getWindowHeight);
+            //         var h = innerHeight;
+            //         var w = h * 1.77;
+            //         window.resizeTo(w, h);
+            //         setTimeout(this.ael(), 2000);
+            //     },
+            //     resizer() {
+            //         console.log('w')
+            //         window.removeEventListener('resize', this.getWindowWidth);
+            //         width = this.windowWidth = innerWidth;
+            //         height = innerHeight * 9;
+            //         window.resizeTo(width, height)
+            //     },
 
-                out() {
-                    this.buttonChanged = true;
-                    setTimeout(function () {
-                        x = innerHeight * .5;
-                        y = innerWidth * .5;
-                        if (innerWidth - y > 290) {
-                            window.resizeBy(-y, -x);
-                        }
-                    }, 100);
+            //     out() {
+            //         this.buttonChanged = true;
+            //         setTimeout(function () {
+            //             x = innerHeight * .5;
+            //             y = innerWidth * .5;
+            //             if (innerWidth - y > 290) {
+            //                 window.resizeBy(-y, -x);
+            //             }
+            //         }, 100);
 
-                },
-                inm() {
-                    this.buttonChanged = true;
-                    setTimeout(function () {
-                        x = innerHeight * 1;
-                        y = innerWidth * 1;
-                        if (innerWidth + y < 2329) {
-                            window.resizeBy(y, x);
-                        }
-                    }, 100);
-                }
-            }, beforeDestroy() {
-                window.removeEventListener('resize', this.getWindowWidth);
-                window.removeEventListener('resize', this.getWindowHeight);
-            }
-        }); </script>
+            //     },
+            //     inm() {
+            //         this.buttonChanged = true;
+            //         setTimeout(function () {
+            //             x = innerHeight * 1;
+            //             y = innerWidth * 1;
+            //             if (innerWidth + y < 2329) {
+            //                 window.resizeBy(y, x);
+            //             }
+            //         }, 100);
+            //     }
+            // }, beforeDestroy() {
+            //     window.removeEventListener('resize', this.getWindowWidth);
+            //     window.removeEventListener('resize', this.getWindowHeight);
+            // }
+        </script>
 
 </body>
 
 </html>
 <style>
+#vida {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100vw;
+    border-bottom: 2px solid black;
+    height: 50vh;
+box-sizing: border-box
+}
+#vidb {
+    grid-column: 1;
+    width: 100vw;
+    height: 50vh;
+    grid-row: 2;
+    border-top: 2px solid black;
+box-sizing: border-box
+
+}
+#cont {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 50vh 50vh;
+}
     .hide {
        opacity: .9;
         transition: 200ms;
