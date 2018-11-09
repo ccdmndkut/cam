@@ -2,7 +2,7 @@
 
 window.onload = function() {
   document.addEventListener('contextmenu', event => event.preventDefault());
-    var u = "http://192.168.0.11:81/iphone.htm",
+    var u = "http://192.168.0.11:81",
       img = document.getElementById("vidb"),
       n = "myNewWindow",
       // w = img.clientWidth / 3,
