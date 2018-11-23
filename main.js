@@ -1,7 +1,7 @@
 window.onload = function() {
   document.addEventListener("contextmenu", event => event.preventDefault());
   // var u = "http://192.168.1.107:81",
-  var u = "http://192.168.1.107:81/livestream.htm?cam=Cam1",
+  var u = "http://192.168.1.107:81/mylive.htm?cam=Cam1",
     img = document.getElementById("vidb"),
     n = "myNewWindow",
     // w = img.clientWidth / 3,
